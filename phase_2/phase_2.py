@@ -12,7 +12,6 @@ from prefect import task, flow, get_run_logger
 def task_kmeans(input_path, output_path):
     logger = get_run_logger()
 
-
     logger.info(f"Read data from {input_path}")
     df = pd.read_parquet(input_path)
     X_clean = df.drop(columns=['isFraud'], errors='ignore')
